@@ -1,0 +1,37 @@
+<!--1. 加链接 2. 点击按钮才能展开  3. 登录注册框选中高亮 4. 获取填写的内容 输出一个JSON-->
+<!DOCTYPE>
+<!DOCTYPE HTML>
+<head>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js"></script>
+</head>
+<body>
+<div class="site">
+    https://www.liaoxuefeng.com/wiki/1022910821149312/1023023660400160
+</div>
+<div>
+    <label for="checkbox">check it</label>
+    <input type="checkbox" id="checkbox">
+</div>
+<div class="register">
+    <label for="register">username:</label>
+    <input type="text" id="register" name="register" value="type">
+    <button>get data</button>
+</div>
+<script>
+    $('.site').html((index,web) => {
+        return `<a href='https://www.liaoxuefeng.com'>${web}</a>`;
+    });
+    $('.register').hide();
+    $('#checkbox').click(() => {
+        $('.register').show();
+    });
+    let json = {};
+    $('button').click(() => {
+        let reg = $('input');
+        json[reg.attr('name')] = reg.val();
+        console.log(json);
+
+        }
+    )
+</script>
+</body>

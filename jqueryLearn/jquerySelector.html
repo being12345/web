@@ -1,0 +1,88 @@
+<!--learn jquery-->
+<!--register and login-->
+<!DOCTYPE>
+<!DOCTYPE HTML>
+<head>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<form id="user">
+<div>
+    <label for="username">username:</label>
+    <input class="input" type="text" value="enter your username" id="username">
+</div>
+<div>
+    <label for="password">password:</label>
+    <input type="password" value="enter your password" id="password">
+</div>
+</form>
+<div id="id">
+    ID:
+    <input type="checkbox" id="1">
+    <label for="1">1</label>
+    <input type="checkbox" id="2">
+    <label for="2">2</label>
+</div>
+<div>
+<button type="submit" class="btn btn-secondary btn-md">sign up</button>
+<button type="submit" class="btn btn-secondary btn-md">login</button>
+</div>
+<ul class="level-1">
+    fassdfa
+    <li class="item-i">I</li>
+    <li class="item-ii">II
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </li>
+    <li class="item-iii">III</li>
+
+    <form id="test-form" action="#0" onsubmit="return false;">
+        <p><label>Name: <input name="name"></label></p>
+        <p><label>Email: <input name="email"></label></p>
+        <p><label>Password: <input name="password" type="password"></label></p>
+        <p>Gender: <label><input name="gender" type="radio" value="m" checked> Male</label> <label><input name="gender" type="radio" value="f"> Female</label></p>
+        <p><label>City: <select name="city">
+            <option value="BJ" selected>Beijing</option>
+            <option value="SH">Shanghai</option>
+            <option value="CD">Chengdu</option>
+            <option value="XM">Xiamen</option>
+        </select></label></p>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</ul>
+<script>
+    //TODO: four method to select the id = username element
+    // $('input').css('background', 'red');
+    // $('#username').css('background', 'red');
+    // $('.input').css('background', 'red');
+    // $('[type=text]').css('background', 'red');
+
+    //TODO: use parent, prev and next method to select some text
+    // $('#user input').prev().css('background', 'red');
+    // $('#id input').next().css('background', 'red');
+    // $('input').prev().next();
+    // $('input').parent('div').css('background', 'red');
+
+    // const value = asyncFn();
+    // value && typeof value.then === "function"; // true
+
+    let json = {};
+    $('form p button').click(()=> {
+        $('#test-form [name]').map(function() {//这里不是异步
+            json[this.name] = this.value;
+        })
+        console.log(json);
+    })
+
+</script>
+</body>
